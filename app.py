@@ -95,6 +95,7 @@ def searchForm():
                 for line_num, line in enumerate(lines, start=1):
                     if search_word.lower() in line.lower():
                         result = (line.strip(), line.lower().count(search_word.lower()))
+                        # print(result)
                         output_results.append(result)
                         count += result[1]
 

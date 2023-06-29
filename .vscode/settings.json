@@ -2,5 +2,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "python.formatting.provider": "none"
+  "python.formatting.provider": "none",
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/742cde50-36ba-48c3-b3fa-2b740619c02e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/sxdAssignment5",
+  "appService.deploySubpath": "."
 }
