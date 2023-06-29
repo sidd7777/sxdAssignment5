@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        /* Custom blue theme */
+        body {
+            background-color: #b6b6b6;
+            color: blue;
+            font-family: serif;
+        }
+
+        .btn-primary {
+            background-color: blue;
+            border-color: blue;
+        }
+
+        .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+            background-color: #0000FF;
+            border-color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-Large">
+        <div class="jumbotron text-center">
+            <h3>Siddhesh Dandavatimath --- 1002091182 --- CSE6332 --- Summer'23 --- Assignment 05</h3>
+        </div>
+    </div>
+    <div class="container-Large">
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <a class="btn btn-primary" href="/">Home</a>
+            </div>
+            <br>
+            <div class="col text-center">
+                <a class="btn btn-primary" href="/search">Search</a>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container-fluid justify-content-center">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

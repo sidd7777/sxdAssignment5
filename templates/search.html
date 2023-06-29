@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Search by Word{% endblock %}
+{% block content %}
+<div class="container-fluid justify-content-center">
+    {% if form %}
+    <div class="container border border-primary mt-4">
+        <div class="form-group">
+            <form action="/search" method="POST">
+                {{ form.csrf_token }}
+                {{ form.input_search.label }} {{ form.input_search }} &nbsp;&nbsp;
+                <b>File Name:</b> <input type="text" name="file_name" placeholder="Enter File Name With .txt at the end as well" required style="width: 275px; text-align: center;">&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Add file name input field -->
+                <button type="submit" class="btn btn-primary">Search</button>  <!-- Custom submit button -->
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    {% if error %}
+    <div class="container border border-primary mt-4">
+        <b>{{ error }}</b>
+    </div>
+    {% endif %}
+    {% if output_results %}
+    <div class="container border border-primary mt-4">
+        <h3 class="display-4">Search Results</h3><br/>
+        <th><h6><b>Word Count: {{ count }}</b></h6></th>
+        <div class="table-responsive" style="text-align: center;">
+            <table class="table table-bordered">
+                <thead class="thead-primary">
+                    <tr>
+                        <td>Sentence</td>
+                        <td>Count</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in output_results %}
+                    <tr>
+                        <td>{{ result[0] }}</td>
+
+                        <td>{{ result[1] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
